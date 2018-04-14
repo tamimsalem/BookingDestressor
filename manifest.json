@@ -6,7 +6,7 @@
     {
       "matches": ["*://*.booking.com/*"],
       "css": [],
-      "js": ["destressor.js"]
+      "js": ["destressor.min.js"]
     }
   ],
     "manifest_version": 2
