@@ -1,11 +1,11 @@
-var observeDOM = (function() {
+var observeDOM = (function() { //This methods code I got from StackOverflow https://stackoverflow.com/a/14570614/1924774
 	var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
         eventListenerSupported = window.addEventListener;
 
-    return function(obj, callback){
+    return function(obj, callback) {
         if(MutationObserver) {
             
-            var obs = new MutationObserver(function(mutations, observer){
+            var obs = new MutationObserver((mutations, observer) => {
                 if(mutations[0].addedNodes.length || mutations[0].removedNodes.length)
                     callback();
             });
@@ -25,16 +25,16 @@ function removeStressFactors() {
         .forEach(stressFactor => {
             if(stressFactor.style.display != 'none') {
                 stressFactor.style.display = 'none';
-                console.log('Stress factor hidden ...')
             }
         });
 }
 
 window.onload = function () {
 
-    console.log('loaded extension');
+    //Remove current stressors
     removeStressFactors();
 
+    //Start monitoring for new stressors
     observeDOM(document, function() { 
         removeStressFactors();
     });
