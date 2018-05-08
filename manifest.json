@@ -1,7 +1,7 @@
 {
 	"name": "Booking.com Destressor",
     "version": "1.0",
-    "description": "A tool that makes your search for a hotel room on booking.com slightly less stressful by removing all those \"5 other people are looking at this\", \"2 rooms remaining\" messages.",
+    "description": "Makes the search for a room on booking.com less stressful by removing \"5 other people are looking at this\" and similar messages.",
     "content_scripts": [
     {
       "matches": ["*://*.booking.com/*"],
